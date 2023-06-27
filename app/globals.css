@@ -24,12 +24,23 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
-    display: flex;
+  }
+
+.main-container {
+  display: flex;
     flex-wrap: wrap;
     gap: 1rem;
-  }
+}  
 
 footer {
   margin-top: 4rem;
+  text-align: center;
+}
+
+.nav {
+  padding: 1rem 0;
+}
+
+.nav h1 {
   text-align: center;
 }

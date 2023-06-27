@@ -12,7 +12,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        {children}
+        <div className="nav">
+          <h1>Pokemon Data</h1>
+        </div>
+        <div className="main-container">
+          {children}
+        </div>
         <footer>
           Alvaro Diaz - Funval 2023
         </footer>
