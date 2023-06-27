@@ -1,24 +1,25 @@
-import React from 'react'
-import styles from "./Card.module.css"
+/* eslint-disable @next/next/no-img-element */
+import "./Card.css"
+import Image from 'next/image';
 
 async function getData(url) {
   const response = await fetch(url);
-  const data = response.json();
+  const data = await response.json();
   return data;
 }
 
 async function PokeCard({ url }) {
   const pokeData = await getData(url)
-  console.log(pokeData);
+ /*  console.log(pokeData); */
+  const pokeImage = pokeData.sprites.front_default; 
+  
 
   return (
-    <section className={styles.container}>
-      <div>
-        <h1>{pokeData.name}</h1>
-        <h2>{pokeData.types[0].type.name}</h2>
-      </div>
-       
-      
+    <section className="cardPokemon">
+        <div className="img"><img src={pokeImage} alt="image"/></div>
+        <h1>Name: {pokeData.name}</h1>
+        <p>Type: {pokeData.types[0].type.name}</p>
+        <p>Id: {pokeData.id}</p>
     </section>
   )
 }
