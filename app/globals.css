@@ -25,3 +25,8 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+footer {
+  margin-top: 4rem;
+  text-align: center;
+}
