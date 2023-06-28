@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import "./Card.css"
-import Image from 'next/image';
+import Link from "next/link";
 
 async function getData(url) {
   const response = await fetch(url);
@@ -15,12 +15,15 @@ async function PokeCard({ url }) {
   
 
   return (
-    <section className="cardPokemon">
+    <Link href={`/info/${pokeData.id}`}> 
+      <section className="cardPokemon">
         <div className="img"><img src={pokeImage} alt="image"/></div>
         <h1>Name: {pokeData.name}</h1>
         <p>Type: {pokeData.types[0].type.name}</p>
         <p>Id: {pokeData.id}</p>
-    </section>
+    </section>        
+    </Link>
+    
   )
 }
 
